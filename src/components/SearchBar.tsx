@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { City, LatLon } from "../interfaces/interfaces";
 
-const SearchBar = () => {
-  const [searchResult, setSearchResult] = useState<CityName[] | null>(null);
-  const [input, setInput] = useState("");
-  const [{ lat, lon }, setLatLon] = useState({} as CityName);
+interface Props {
+  setLatLon: Dispatch<SetStateAction<LatLon | null>>;
+}
+
+const SearchBar = ({ setLatLon }: Props) => {
+  const [searchResult, setSearchResult] = useState<City[] | null>(null);
+  /* const [input, setInput] = useState(""); */
 
 
   useEffect(() => {
@@ -15,21 +19,21 @@ const SearchBar = () => {
     }
     searchFunc();
   }, [])
-  console.log(lat, lon)
 
   return (
     <div>
       <h1>Hello from searchBar</h1>
-      <input onChange={(e) => setInput(e.target.value)} />
+      {/* <input onChange={(e) => setInput(e.target.value)} /> */}
       {searchResult && searchResult.map((city) => (
         <div
           key={city.name}
-          onClick={() => setLatLon(
-            {
+          onClick={() => {
+            setLatLon({
               lat: city.lat,
               lon: city.lon
-            }
-          )}
+            });
+          }
+          }
         >
           {city.name + " / " + city.state}
         </div>

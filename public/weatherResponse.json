@@ -1,0 +1,46 @@
+{
+  "coord": {
+    "lon": -55.4972,
+    "lat": -27.6335
+  },
+  "weather": [
+    {
+      "id": 804,
+      "main": "Clouds",
+      "description": "overcast clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 26.73,
+    "feels_like": 27.12,
+    "temp_min": 26.73,
+    "temp_max": 26.73,
+    "pressure": 1009,
+    "humidity": 49,
+    "sea_level": 1009,
+    "grnd_level": 979
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 1.66,
+    "deg": 185,
+    "gust": 2.67
+  },
+  "clouds": {
+    "all": 94
+  },
+  "dt": 1668187701,
+  "sys": {
+    "type": 2,
+    "id": 2073314,
+    "country": "AR",
+    "sunrise": 1668156253,
+    "sunset": 1668204477
+  },
+  "timezone": -10800,
+  "id": 3435532,
+  "name": "Cerro Azul",
+  "cod": 200
+}
