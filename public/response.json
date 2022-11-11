@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Cerro Azul",
+    "lat": -27.633535,
+    "lon": -55.4971519,
+    "country": "AR",
+    "state": "Misiones"
+  },
+  {
+    "name": "Municipio de Cerro Azul",
+    "local_names": {
+      "es": "Municipio de Cerro Azul"
+    },
+    "lat": -27.633535,
+    "lon": -55.4971519,
+    "country": "AR",
+    "state": "Misiones"
+  },
+  {
+    "name": "Barrio Cerro Azul",
+    "local_names": {
+      "es": "Barrio Cerro Azul"
+    },
+    "lat": -26.8163572,
+    "lon": -55.0343708,
+    "country": "AR",
+    "state": "Misiones"
+  },
+  {
+    "name": "Villa Cerro Azul",
+    "local_names": {
+      "es": "Villa Cerro Azul"
+    },
+    "lat": -31.0726739,
+    "lon": -64.3167957,
+    "country": "AR",
+    "state": "Córdoba"
+  }
+]
