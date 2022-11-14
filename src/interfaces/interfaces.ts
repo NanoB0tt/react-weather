@@ -1,18 +1,23 @@
-interface Weather {
-  app_temp: number;
-  temp: number;
-  city_name: string;
-  precip: number;
+export interface Weather {
   weather: {
-    code: number;
-    icon: string;
     description: string;
+    icon: string;
+  }[];
+  main: {
+    temp: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
+    humidity: number;
   };
+  name: string;
 }
 
-interface CityName {
-  name?: string;
-  lat?: string;
-  lon?: string;
-  state?: string;
+export interface City {
+  name: string;
+  lat: number;
+  lon: number;
+  state: string;
 }
+
+export type LatLon = Pick<City, "lat" | "lon">
