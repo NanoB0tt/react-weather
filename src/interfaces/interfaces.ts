@@ -17,7 +17,8 @@ export interface City {
   name: string;
   lat: number;
   lon: number;
-  state: string;
+  state?: string;
+  country: string;
 }
 
 export type LatLon = Pick<City, "lat" | "lon">

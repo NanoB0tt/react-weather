@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { LatLon, Weather } from "../interfaces/interfaces";
+import { getWeatherData } from "../services/getWeatherData";
 
 interface Props {
   location: LatLon | null;
@@ -11,8 +12,7 @@ const CityWeather = ({ location }: Props) => {
   useEffect(() => {
     if (location) {
       const fetchData = async () => {
-        const data: Weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=ed2c277292dc14513b2b77e5239c846b&units=metric&lang=es`)
-          .then(res => res.json())
+        const data = await getWeatherData(location)
         setWeatherData(data);
       }
       fetchData();
