@@ -1,16 +1,14 @@
 export interface Weather {
-  weather: {
-    description: string;
-    icon: string;
-  }[];
-  main: {
+  name: string;
+  description: string;
+  icon: string;
+  temperature: {
     temp: number;
     feels_like: number;
     temp_min: number;
     temp_max: number;
     humidity: number;
   };
-  name: string;
 }
 
 export interface City {
