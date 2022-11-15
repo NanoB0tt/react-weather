@@ -1,5 +1,7 @@
+import { nanoid } from "nanoid";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { City, LatLon } from "../interfaces/interfaces";
+import { getCityData } from "../services/getCityData";
 
 interface Props {
   setLatLon: Dispatch<SetStateAction<LatLon | null>>;
@@ -7,26 +9,32 @@ interface Props {
 
 const SearchBar = ({ setLatLon }: Props) => {
   const [searchResult, setSearchResult] = useState<City[] | null>(null);
-  /* const [input, setInput] = useState(""); */
+  const [input, setInput] = useState("");
+  const [submit, setSubmit] = useState("");
 
 
   useEffect(() => {
-    const searchFunc = async () => {
-      const data = await fetch("response.json")
-        .then(response => response.json())
-        .catch(err => console.error(err));
-      setSearchResult(data);
+    if (submit !== "") {
+      const searchFunc = async () => {
+        const data = await getCityData(submit);
+        setSearchResult(data);
+      }
+      searchFunc();
     }
-    searchFunc();
-  }, [])
+  }, [submit])
 
   return (
     <div>
-      <h1>Hello from searchBar</h1>
-      {/* <input onChange={(e) => setInput(e.target.value)} /> */}
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        setSubmit(input);
+      }}>
+        <input onChange={(e) => setInput(e.target.value)} />
+        <button type="submit">Search</button>
+      </form>
       {searchResult && searchResult.map((city) => (
         <div
-          key={city.name}
+          key={nanoid()}
           onClick={() => {
             setLatLon({
               lat: city.lat,
@@ -35,7 +43,7 @@ const SearchBar = ({ setLatLon }: Props) => {
           }
           }
         >
-          {city.name + " / " + city.state}
+          {`${city.name} / ${city.state ? `${city.state},` : ""} ${city.country}`}
         </div>
       ))}
     </div>
