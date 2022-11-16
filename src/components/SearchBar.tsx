@@ -15,9 +15,8 @@ const SearchBar = ({ setLatLon }: Props) => {
 
   useEffect(() => {
     if (submit !== "") {
-      const searchFunc = async () => {
-        const data = await getCityData(submit);
-        setSearchResult(data);
+      const searchFunc = () => {
+        getCityData(submit).then(data => setSearchResult(data));
       }
       searchFunc();
     }

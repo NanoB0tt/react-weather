@@ -1,14 +1,16 @@
+export interface Temperature {
+  temp: number;
+  feels_like?: number;
+  temp_min: number;
+  temp_max: number;
+};
+
 export interface Weather {
-  name: string;
+  name?: string;
+  hour?: string;
   description: string;
   icon: string;
-  temperature: {
-    temp: number;
-    feels_like: number;
-    temp_min: number;
-    temp_max: number;
-    humidity: number;
-  };
+  temperature: Temperature;
 }
 
 export interface City {

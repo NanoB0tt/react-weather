@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { getWeatherAdapter } from "../adapters/getWeatherAdapter";
 import { LatLon, Weather } from "../interfaces/interfaces";
 import { getWeatherData } from "../services/getWeatherData";
 
@@ -12,9 +11,8 @@ const CityWeather = ({ location }: Props) => {
 
   useEffect(() => {
     if (location) {
-      const fetchData = async () => {
-        const data = await getWeatherData(location)
-        setWeatherData(getWeatherAdapter(data));
+      const fetchData = () => {
+        getWeatherData(location).then(data => setWeatherData(data))
       }
       fetchData();
     }
