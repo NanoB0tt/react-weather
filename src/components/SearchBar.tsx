@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { City, LatLon } from "../interfaces/interfaces";
-import { getCityData } from "../services/getCityData";
+import { getCity } from "../services/getCity";
 
 interface Props {
   setLatLon: Dispatch<SetStateAction<LatLon | null>>;
@@ -16,14 +16,14 @@ const SearchBar = ({ setLatLon }: Props) => {
   useEffect(() => {
     if (submit !== "") {
       const searchFunc = () => {
-        getCityData(submit).then(data => setSearchResult(data));
+        getCity(submit).then(setSearchResult);
       }
       searchFunc();
     }
   }, [submit])
 
   return (
-    <div>
+    <>
       <form onSubmit={(e) => {
         e.preventDefault();
         setSubmit(input);
@@ -45,7 +45,7 @@ const SearchBar = ({ setLatLon }: Props) => {
           {`${city.name} / ${city.state ? `${city.state},` : ""} ${city.country}`}
         </div>
       ))}
-    </div>
+    </>
   )
 }
 

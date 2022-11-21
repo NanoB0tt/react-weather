@@ -1,4 +1,4 @@
-import WeatherApp from "./components/WeatherApp"
+import WeatherApp from "./screens/WeatherApp"
 
 const App = () => {
 

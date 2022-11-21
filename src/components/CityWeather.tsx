@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { LatLon, Weather } from "../interfaces/interfaces";
-import { getWeatherData } from "../services/getWeatherData";
+import { getWeather } from "../services/getWeather";
 
 interface Props {
   location: LatLon | null;
@@ -12,7 +12,7 @@ const CityWeather = ({ location }: Props) => {
   useEffect(() => {
     if (location) {
       const fetchData = () => {
-        getWeatherData(location).then(data => setWeatherData(data))
+        getWeather(location).then(setWeatherData)
       }
       fetchData();
     }
