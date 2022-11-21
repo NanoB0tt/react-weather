@@ -1,19 +1,19 @@
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import { LatLon, Weather } from "../interfaces/interfaces";
-import { getWeekWeather } from "../services/getWeekWeatherData";
+import { getWeekWeather } from "../services/getWeekWeather";
 
 interface Props {
   location: LatLon | null;
 }
 
-const WeekWeatherDisplay = ({ location }: Props) => {
+const WeekWeather = ({ location }: Props) => {
   const [weatherData, setWeatherData] = useState<Weather[] | null>(null);
 
   useEffect(() => {
     if (location) {
       const fetchData = () => {
-        getWeekWeather(location).then(data => setWeatherData(data))
+        getWeekWeather(location).then(setWeatherData)
       }
       fetchData();
     }
@@ -38,4 +38,4 @@ const WeekWeatherDisplay = ({ location }: Props) => {
 
 }
 
-export default WeekWeatherDisplay;
+export default WeekWeather;
