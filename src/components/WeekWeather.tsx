@@ -2,7 +2,7 @@ import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import { LatLon, Weather } from "../interfaces/interfaces";
 import { getWeekWeather } from "../services/getWeekWeather";
-import { WeekDay } from "./WeekDay";
+import { GetDay, WeekDay } from "../utils/WeekDay";
 
 interface Props {
   location: LatLon | null;
@@ -25,6 +25,7 @@ const WeekWeather = ({ location }: Props) => {
       {
         WeekDay(weatherData)?.map((day: Weather[]) => (
           <article key={nanoid()}>
+            <h1>{day.map(title => GetDay(title.hour))[0]}</h1>
             {day.map(weather => (
               <section key={nanoid()}>
                 <h2>{weather.hour}</h2>
