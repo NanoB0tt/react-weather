@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { City, LatLon } from "../../interfaces/interfaces";
 import { getCity } from "../../services/getCity";
 import { FaSearch } from "react-icons/fa";
-import "./style.css"
+import "./style.css";
 
 interface Props {
   setLatLon: Dispatch<SetStateAction<LatLon | null>>;
@@ -22,7 +22,7 @@ const SearchBar = ({ setLatLon }: Props) => {
       }
       searchFunc();
     }
-  }, [submit])
+  }, [submit]);
 
   return (
     <div className="search-container">

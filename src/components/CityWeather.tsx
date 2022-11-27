@@ -12,7 +12,7 @@ const CityWeather = ({ location }: Props) => {
   useEffect(() => {
     if (location) {
       const fetchData = () => {
-        getWeather(location).then(setWeatherData)
+        getWeather(location).then(setWeatherData);
       }
       fetchData();
     }
