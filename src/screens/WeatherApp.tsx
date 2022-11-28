@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { LatLon } from "../interfaces/interfaces";
-import CityWeather from "../components/CityWeather";
+import CityWeather from "../components/CityWeather/CityWeather";
 import SearchBar from "../components/SearchBar/SearchBar";
 import WeekWeather from "../components/WeekWeather";
 

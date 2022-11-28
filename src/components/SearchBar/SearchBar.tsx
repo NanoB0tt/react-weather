@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { City, LatLon } from "../../interfaces/interfaces";
 import { getCity } from "../../services/getCity";
 import { FaSearch } from "react-icons/fa";
-import "./style.css";
+import style from "./SearchBar.module.css";
 
 interface Props {
   setLatLon: Dispatch<SetStateAction<LatLon | null>>;
@@ -25,7 +25,7 @@ const SearchBar = ({ setLatLon }: Props) => {
   }, [submit]);
 
   return (
-    <div className="search-container">
+    <div className={style["search-container"]}>
       <form onSubmit={(e) => {
         e.preventDefault();
         setSubmit(input);
@@ -33,7 +33,7 @@ const SearchBar = ({ setLatLon }: Props) => {
         <input onChange={(e) => setInput(e.target.value)} value={input} />
         <button type="submit"><FaSearch></FaSearch></button>
       </form>
-      <ul className="items-list">
+      <ul className={style["items-list"]}>
         {searchResult && searchResult.map((city) => (
           <li
             key={nanoid()}
@@ -46,7 +46,7 @@ const SearchBar = ({ setLatLon }: Props) => {
               setInput("");
             }
             }
-            className="search-item"
+            className={style["search-item"]}
           >
             {`${city.name} / ${city.state ? `${city.state},` : ""} ${city.country}`}
           </li>
