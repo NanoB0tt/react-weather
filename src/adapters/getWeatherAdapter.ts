@@ -10,7 +10,6 @@ export const getWeatherAdapter = (untypedWeather: any): Weather => {
       feels_like: untypedWeather.main.feels_like,
       temp_min: untypedWeather.main.temp_min,
       temp_max: untypedWeather.main.temp_max,
-      humidity: untypedWeather.main.humidity
     }
   }
 }

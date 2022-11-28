@@ -1,4 +1,5 @@
 import WeatherApp from "./screens/WeatherApp"
+import "./App.css"
 
 const App = () => {
 
