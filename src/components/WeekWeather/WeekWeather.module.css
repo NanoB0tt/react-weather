@@ -1,0 +1,8 @@
+.week-weather-container {
+  display: grid;
+  grid-template-columns: repeat(6, 50vw);
+  padding: 1.2rem;
+  overflow: scroll;
+  height: 18.125rem;
+  align-self: end;
+}
