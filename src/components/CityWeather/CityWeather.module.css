@@ -1,0 +1,40 @@
+.weather-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1.2rem;
+  align-self: center;
+}
+
+.city-name {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+.temperature {
+  font-size: 3rem;
+  align-self: end;
+}
+
+.feels-like {
+  grid-column: 1 / 2;
+  grid-row: 3;
+  align-self: end;
+  font-size: 0.7rem;
+}
+
+.items-list {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+  display: grid;
+  justify-content: center;
+}
+
+.weather-icon {
+  display: grid;
+  justify-content: center;
+}
+
+.weather-description {
+  font-size: 0.7rem;
+  text-align: center;
+}
