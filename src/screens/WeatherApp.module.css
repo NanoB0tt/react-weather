@@ -1,14 +1,15 @@
 .container {
   height: 100vh;
-  background-image: url("../assets/backgrounds/blue-sky-mobile.jpg");
+  background-image: url("../assets/backgrounds/clearDay.jpg");
   background-size: cover;
+  background-position: center;
   padding: 0.7rem;
 }
 
 .blur {
   height: 100%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(116, 116, 116, 0.31);
   border-radius: 1.3rem;
-  backdrop-filter: blur(7.4px);
+  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(7.4px);
 }
