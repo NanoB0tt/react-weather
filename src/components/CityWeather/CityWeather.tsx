@@ -5,9 +5,10 @@ import style from "./CityWeather.module.css";
 
 interface Props {
   location: LatLon | null;
+  option: string;
 }
 
-const CityWeather = ({ location }: Props) => {
+const CityWeather = ({ location, option }: Props) => {
   const [weatherData, setWeatherData] = useState<Weather | null>(null);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const CityWeather = ({ location }: Props) => {
 
   return (
     <>
-      {weatherData && (
+      {weatherData && option === "day" && (
         <div className={style["weather-container"]}>
           <h1 className={style["city-name"]}>{weatherData.name}</h1>
           <h2 className={style["temperature"]}>{`${Math.round(weatherData.temperature?.temp)}°C`}</h2>
