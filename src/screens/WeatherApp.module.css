@@ -1,0 +1,14 @@
+.container {
+  height: 100vh;
+  background-image: url("../assets/backgrounds/blue-sky-mobile.jpg");
+  background-size: cover;
+  padding: 0.7rem;
+}
+
+.blur {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 1.3rem;
+  backdrop-filter: blur(7.4px);
+  -webkit-backdrop-filter: blur(7.4px);
+}
