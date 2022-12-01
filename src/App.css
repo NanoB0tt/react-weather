@@ -11,6 +11,6 @@ ul {
   padding: 0;
 }
 
-/* html { */
-/*   overflow: hidden; */
-/* } */
+html {
+  overflow: hidden;
+}
