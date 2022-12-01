@@ -14,7 +14,6 @@ const SearchBar = ({ setLatLon }: Props) => {
   const [input, setInput] = useState("");
   const [submit, setSubmit] = useState("");
 
-
   useEffect(() => {
     if (submit !== "") {
       const searchFunc = () => {
@@ -33,7 +32,7 @@ const SearchBar = ({ setLatLon }: Props) => {
         <input onChange={(e) => setInput(e.target.value)} value={input} />
         <button type="submit"><FaSearch></FaSearch></button>
       </form>
-      <ul className={style["items-list"]}>
+      <ul className={searchResult ? style["items-list"] : ""}>
         {searchResult && searchResult.map((city) => (
           <li
             key={nanoid()}

@@ -11,12 +11,6 @@ ul {
   padding: 0;
 }
 
-html {
-  overflow: hidden;
-}
-
-.App {
-  height: 100vh;
-  display: grid;
-  grid-template-rows: min-content 1fr 1fr;
-}
+/* html { */
+/*   overflow: hidden; */
+/* } */
