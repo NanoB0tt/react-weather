@@ -2,21 +2,17 @@ import { Weather } from "../interfaces/interfaces";
 
 export const WeekDay = (data: Weather[] | null) => {
   const arr = [];
+  const obj = {} as { [name: string]: Weather[] };
 
-  const weekdays = data?.reduce((obj, day) => {
-    if (day.hour !== undefined) {
-      const dayDate = day.hour.split(' ')[0];
-      obj[dayDate] = data.filter((weather) => weather.hour?.split(' ')[0] === dayDate);
+  data?.map(item => {
+    const index = item.hour?.split(' ')[0]
+    if (index !== undefined) {
+      obj[index] = obj[index] === undefined ? [item] : [...obj[index], item]
     }
+  })
 
-    return obj;
-
-  }, {} as { [name: string]: Weather[] });
-
-  if (weekdays !== undefined) {
-    for (const [_key, value] of Object.entries(weekdays)) {
-      arr.push(value);
-    }
+  for (const [_key, value] of Object.entries(obj)) {
+    arr.push(value);
   }
 
   return arr;
