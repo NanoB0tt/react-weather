@@ -1,0 +1,52 @@
+.day {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.day-weather {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1rem;
+  border-bottom: 0.3rem solid rgba(255, 255, 255, 0.3);
+  border-bottom-right-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+  padding: 1rem 0.7rem;
+  box-shadow: 0px -3px 3px 0px rgba(171, 168, 168, 0.23);
+}
+
+.hour {
+  font-size: 1.2rem;
+}
+
+.temperature {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  font-size: 2.4rem;
+  align-self: end;
+}
+
+.feels-like {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  font-size: 1.2rem;
+}
+
+.items-list {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-icon {
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.weather-description {
+  font-size: 0.9rem;
+}
+
+
