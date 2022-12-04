@@ -14,3 +14,18 @@ ul {
 html {
   overflow: hidden;
 }
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(171, 168, 168, 0.7);
+  border-radius: 100vw;
+}
+
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-color: rgba(171, 168, 168, 0.7) transparent;
+  }
+}
