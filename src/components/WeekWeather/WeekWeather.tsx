@@ -12,6 +12,15 @@ interface Props {
 
 const WeekWeather = ({ location, option }: Props) => {
   const [weatherData, setWeatherData] = useState<Weather[] | null>(null);
+  const [clicked, setClicked] = useState<number | null>(null);
+
+  const handleClick = (index: number) => {
+    if (clicked === index) {
+      setClicked(null);
+    } else {
+      setClicked(index);
+    }
+  }
 
   useEffect(() => {
     if (location) {
@@ -26,7 +35,7 @@ const WeekWeather = ({ location, option }: Props) => {
     <>
       {option == "week" && (
         <div className={style["week-weather-container"]}>
-          {WeekDay(weatherData)?.map((day: Weather[], index) => <Days day={day} key={index} />)}
+          {WeekDay(weatherData)?.map((day: Weather[], index) => <Days day={day} key={index} onToggle={() => handleClick(index)} active={clicked === index} />)}
         </div>
       )
       }

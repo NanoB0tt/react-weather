@@ -1,25 +1,20 @@
 import { nanoid } from "nanoid"
-import { useState } from "react";
 import { Weather } from "../../interfaces/interfaces";
 import { GetDay } from "../../utils/utils";
 import style from "./Days.module.css"
 
 interface Props {
   day: Weather[];
+  onToggle: () => void;
+  active: boolean;
 }
 
-const Days = ({ day }: Props) => {
-  const [showData, setShowData] = useState(false);
-
-  const displayDay = () => {
-    setShowData(true);
-    showData && setShowData(false);
-  }
+const Days = ({ day, onToggle, active }: Props) => {
 
   return (
     <article>
-      <h1 className={style["day"]} onClick={() => displayDay()}>{day.map(title => GetDay(title.hour))[0]}</h1>
-      {showData && (
+      <h1 className={style["day"]} onClick={onToggle}>{day.map(title => GetDay(title.hour))[0]}</h1>
+      {active && (
         day.map(weather => {
           return (
             <section className={style["day-weather"]} key={nanoid()}>
