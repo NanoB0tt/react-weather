@@ -17,7 +17,6 @@ const WeatherApp = () => {
         {location && <DisplayOptions setOption={setOption} />}
         <CityWeather location={location} option={option} />
         <WeekWeather location={location} option={option} />
-
       </div>
     </div>
   )
