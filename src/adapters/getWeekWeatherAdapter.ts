@@ -11,7 +11,6 @@ export const getWeekWeatherAdapter = (untypeWeekWeather: any): Weather[] => {
       temp_max: weatherDay.main.temp_max,
     },
     hour: weatherDay.dt_txt
-
   })
   )
 }
