@@ -8,6 +8,7 @@
           <img src="public/react.svg" alt="React logo" width="100"/>
         </a>
 </p>
+[Demo](https://weatherapp-nanob0tt.netlify.app/)
 
 ## Run in local environment
 1. Clone this repository
@@ -17,7 +18,7 @@
 npm install
 ```
 
-3. Rename __.env.template__ to __.env__ 
+3. Rename __.env.template__ to __.env__
 
 4. Replace the variable in __.env__ with a working API key from [here](https://openweathermap.org/)
 
