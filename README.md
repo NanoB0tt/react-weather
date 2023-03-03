@@ -8,6 +8,10 @@
           <img src="public/react.svg" alt="React logo" width="100"/>
         </a>
 </p>
+
+<p>
+        <img src="public/weatherApp.png" alt="app screenshot" />
+</p>
 [Demo](https://weatherapp-nanob0tt.netlify.app/)
 
 ## Run in local environment
