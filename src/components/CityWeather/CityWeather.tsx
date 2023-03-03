@@ -29,7 +29,7 @@ const CityWeather = ({ location, option }: Props) => {
           <h2 className={style["temperature"]}>{`${Math.round(weatherData.temperature?.temp)}°C`}</h2>
           <p className={style["feels-like"]}>{`Sensación térmica de ${weatherData.temperature?.feels_like && Math.round(weatherData.temperature?.feels_like)}°`}</p>
           <ul className={style["items-list"]}>
-            <li className={style["weather-icon"]}><img src={`http://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} /></li>
+            <li className={style["weather-icon"]}><img src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} /></li>
             <li className={style["weather-description"]}>{weatherData.description}</li>
           </ul>
         </div>
