@@ -12,7 +12,7 @@
 <p>
         <img src="public/weatherApp.png" alt="app screenshot" />
 </p>
-[Demo](https://weatherapp-nanob0tt.netlify.app/)
+<a href="https://weatherapp-nanob0tt.netlify.app/" target="_blank">Demo</a>
 
 ## Run in local environment
 1. Clone this repository
