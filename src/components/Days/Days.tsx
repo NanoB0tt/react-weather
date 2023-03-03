@@ -18,7 +18,7 @@ const Days = ({ day, onToggle, active }: Props) => {
         day.map(weather => {
           return (
             <section className={style["day-weather"]} key={nanoid()}>
-              <h2 className={style["hour"]}>{weather.hour?.split(' ')[1]}</h2>
+              <h2 className={style["hour"]}>{weather.hour?.split(' ')[1].split(':').slice(0, -1).join(':')}</h2>
               <h2 className={style["temperature"]}>{`${Math.round(weather.temperature?.temp)}°C`}</h2>
               <h2 className={style["feels-like"]}>{`${weather.temperature?.feels_like && Math.round(weather.temperature?.feels_like)}°`}</h2>
               <ul className={style["items-list"]}>
